@@ -28,7 +28,7 @@ public class ListingFilesToTxt {
     static long fileSizeTrashhold = 1024 * 1024;
     static String[] fileExtensions = {".jpg", ".png", ".bmp", ".gif", ".psd"};
     static String dirName = "j:/Рисунки/Мои сочинения/";
-    static String outPutFileToPrint = "j:/Рисунки/Мои сочинения/Список выбранных файлов.doc"; // best with doc format
+    static String outPutFileToPrint = "j:/Рисунки/Мои сочинения/Список выбранных файлов.doc";
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 //        trial();
@@ -50,6 +50,7 @@ public class ListingFilesToTxt {
      */
     private static void printInitialLines(OutputStreamWriter dataOut) throws IOException {
 
+        dataOut.write("Selected directory: " + dirName + "\n");
         dataOut.write("The minimum file size trashhold is " + fileSizeTrashhold + " bytes\n");
         dataOut.write("The selected extensions are: ");
         for (String ext : fileExtensions) {
